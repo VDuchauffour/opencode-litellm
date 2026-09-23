@@ -212,8 +212,11 @@ const USD_PER_TOKEN_TO_PER_MILLION = 1_000_000
  * `opencode.json`). Returns `null` for non-chat models (embedding,
  * image, audio) — they can't be used as primary chat models and would
  * clutter the picker.
+ *
+ * Exported for tests: `formatModelNames` decides whether the display
+ * name is the prettified id or the raw `/v1/models` id verbatim.
  */
-function toConfigModel(
+export function toConfigModel(
   model: LiteLLMModel,
   info?: LiteLLMModelInfo,
   formatModelNames = true,
